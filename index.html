@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Viewer with Audio</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    model-viewer {
+      width: 90vw;
+      height: 80vh;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Model Viewer -->
+  <model-viewer 
+    src="shared-assets/models/bocil_ustad.glb" 
+    ar 
+    ar-modes="webxr scene-viewer quick-look" 
+    camera-controls 
+    touch-action="pan-y" 
+    alt="A 3D model of Bocil Ustad" 
+    shadow-intensity="2" 
+    auto-rotate 
+    disable-pan 
+    loop
+    animation-name="Run" 
+    autoplay
+    skybox-image="shared-assets/environments/ruang.hdr" 
+    skybox-height="8m" 
+    max-camera-orbit="auto 180deg auto">
+  </model-viewer>
+
+  <!-- Audio Player -->
+  <audio id="audio" src="doa.mp3" preload="auto"></audio>
+
+  <script>
+    // Menambahkan Event Listener untuk memutar audio ketika model-viewer dimuat
+    document.querySelector("model-viewer").addEventListener('load', () => {
+      const audio = document.getElementById("audio");
+      audio.play(); // Memutar audio
+    });
+  </script>
+</body>
+</html>
