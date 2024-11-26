@@ -1,2 +1,3 @@
-Nama  : Bagas Andi Kurniawan \n
+Nama  : Bagas Andi Kurniawan 
+
 NRP   : 5323600055
