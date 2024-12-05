@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Model Viewer with Audio</title>
+  <title>AR Model Viewer</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
     model-viewer {
-      width: 90vw;
-      height: 80vh;
+      width: 100%;
+      height: 100vh;
       display: block;
       margin: auto;
     }
   </style>
 </head>
 <body>
-  <!-- Model Viewer -->
+  <!-- Model Viewer with AR -->
   <model-viewer 
     src="shared-assets/models/bocil_ustad.glb" 
     ar 
@@ -23,15 +23,13 @@
     camera-controls 
     touch-action="pan-y" 
     alt="A 3D model of Bocil Ustad" 
-    shadow-intensity="2" 
+    shadow-intensity="1" 
     auto-rotate 
     disable-pan 
     loop
     animation-name="Run" 
     autoplay
-    skybox-image="shared-assets/environments/ruang.hdr" 
-    skybox-height="8m" 
-    max-camera-orbit="auto 180deg auto">
+    camera-orbit="auto 180deg auto">
   </model-viewer>
 
   <!-- Audio Player -->
